@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+    text-align: center;
+}
+main{
+    margin-top: 30px;
+}
+h1{
+   font-family: 'Dancing Script', cursive;
+   font-size: 40px;
+}
+
+.black{
+    background-color: black;
+}
+
+.box{
+    height: 15px;
+    width: 15px;
+    border: 0.5px solid grey;
+}
+
+.grid{
+    width: 528px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    margin: 30px auto;
+
+}

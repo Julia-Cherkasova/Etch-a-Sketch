@@ -2,6 +2,15 @@
     margin: 0px;
     text-align: center;
 }
+button{
+    font-family: arial;
+    font-size: 15px;
+    width: 70px;
+    height: 30px;
+    border: 1px solid rgb(50, 49, 49);
+    border-radius: 5px;
+    color: rgb(58, 57, 57);
+}
 main{
     margin-top: 30px;
 }
@@ -10,21 +19,36 @@ h1{
    font-size: 40px;
 }
 
-.black{
-    background-color: black;
+p{
+    margin: 50px auto 10px;
+    font-size: 20px;
+    font-family: arial;
+    color: rgb(58, 57, 57);
+}
+section{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .box{
-    height: 15px;
-    width: 15px;
-    border: 0.5px solid grey;
+    background-color: white;
 }
 
 .grid{
-    width: 528px;
+    width: 512px;
     display: flex;
     flex-wrap: wrap;
     border: 2px solid black;
     margin: 30px auto;
+}
 
+.reset{
+    margin-top: 20px;
+}
+.size-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
 }

@@ -67,5 +67,11 @@ function f3 (){
 }
 btn_16.onclick = f3;
 
-
-
+//Reset button
+function reset(){
+    let boxes = document.querySelectorAll(".box");
+    for (let i = 0; i < boxes.length; i++){
+         boxes[i].style.backgroundColor = "white";
+    };
+}
+btn_reset.onclick = reset;

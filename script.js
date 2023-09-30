@@ -1,15 +1,17 @@
 //buttons
-let btn_16 = document.querySelector(".b-16");
-let btn_32 = document.querySelector(".b-32");
-let btn_64 = document.querySelector(".b-64");
-let btn_reset = document.querySelector(".reset");
+const btn_16 = document.querySelector(".b-16");
+const btn_32 = document.querySelector(".b-32");
+const btn_64 = document.querySelector(".b-64");
+const btn_reset = document.querySelector(".reset");
+const colorPicker = document.querySelector(".square")
 
 //creating the grid
-let grid = "";
+// let grid = "";
 const gridWidth = 512;
+const defaultSize = 16;
 
-function createGrid (gridSize = 16){
-    for (let i = 0; i < gridSize**2; i++){
+function createGrid (gridSize = defaultSize){
+   for (let i = 0; i < gridSize**2; i++){
         let gridCell = document.createElement("div");
         Object.assign(gridCell.style, {
             height: `${(gridWidth/gridSize)}px`,
@@ -21,8 +23,6 @@ function createGrid (gridSize = 16){
     }
 }
 
-window.onload = createGrid();
-
 //changing color of boxes
 
 // boxes.forEach(box => {
@@ -30,14 +30,24 @@ window.onload = createGrid();
 //         box.style.background = 'black';
 //     }
 // });
-function changeColor(){
+
+let currentColor = "#000000";
+
+function changeColor(event){
     let boxes = document.querySelectorAll(".box");
+
     for (let i = 0; i < boxes.length; i++){
         boxes[i].onmousemove = () => {
-            boxes[i].style.backgroundColor = "black";
+            boxes[i].style.backgroundColor = currentColor;
         };
     }
 }
+
+//changing color according to user's choice
+colorPicker.addEventListener('input', function() {
+    console.log(colorPicker.value);
+    currentColor = colorPicker.value;
+  })
 
 //changing box's size
 function f1 (){
@@ -75,3 +85,6 @@ function reset(){
     };
 }
 btn_reset.onclick = reset;
+
+
+window.onload = createGrid();

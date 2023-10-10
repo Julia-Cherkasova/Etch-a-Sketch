@@ -3,7 +3,7 @@
     text-align: center;
 }
 button{
-    font-family: arial;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman'ial;
     font-size: 15px;
     width: 70px;
     height: 30px;
@@ -18,9 +18,10 @@ h1{
    font-family: 'Dancing Script', cursive;
    font-size: 40px;
 }
+
 p{
     font-size: 20px;
-    font-family: arial;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
     color: rgb(58, 57, 57);
 }
 
@@ -33,9 +34,15 @@ section{
 .box{
     background-color: white;
 }
-
+.color{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .color_txt{
     margin-top: 10px;
+    width: 100px;
+    height: 48px;
 }
 
 .grid{
@@ -50,14 +57,25 @@ section{
     margin: 50px auto 10px;
 }
 
+.rainbow_btn{
+    width: 100px;
+    height: 48px;
+    margin-top: 40px;
+}
+.reset{
+    margin-top: 50px;
+}
+
+.rules{
+    margin: 10px auto;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 .square{
     width: 60px;
     height: 60px;
     border: 0px;
-    margin-top: 40px;
-}
-
-.reset{
     margin-top: 50px;
 }
 

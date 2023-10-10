@@ -3,7 +3,9 @@ const btn_16 = document.querySelector(".b-16");
 const btn_32 = document.querySelector(".b-32");
 const btn_64 = document.querySelector(".b-64");
 const btn_reset = document.querySelector(".reset");
-const colorPicker = document.querySelector(".square")
+const colorPicker = document.querySelector(".square");
+const rainbowBtn = document.querySelector(".rainbow_btn");
+const btn_color = document.querySelector(".color_txt");
 
 //creating the grid
 // let grid = "";
@@ -33,7 +35,7 @@ function createGrid (gridSize = defaultSize){
 
 let currentColor = "#000000";
 
-function changeColor(event){
+function changeColor(){
     let boxes = document.querySelectorAll(".box");
 
     for (let i = 0; i < boxes.length; i++){
@@ -45,9 +47,28 @@ function changeColor(event){
 
 //changing color according to user's choice
 colorPicker.addEventListener('input', function() {
-    console.log(colorPicker.value);
     currentColor = colorPicker.value;
   })
+  
+btn_color.onclick = changeColor;
+
+//rainbow colors
+ function rainbowCells(){
+    let boxes = document.querySelectorAll(".box");
+    
+    for (let i = 0; i < boxes.length; i++){
+        boxes[i].onmousemove = () => {
+            let red = (Math.floor(Math.random()*255));
+            let green = (Math.floor(Math.random()*255));
+            let blue = (Math.floor(Math.random()*255));
+            let rainbowColor = (`${red}, ${green}, ${blue}`);
+            currentColor = "rgb"+"(" + rainbowColor + ")";
+
+            boxes[i].style.backgroundColor = currentColor;
+        };
+    }
+}
+rainbowBtn.addEventListener("click", rainbowCells, false);
 
 //changing box's size
 function f1 (){
@@ -85,6 +106,5 @@ function reset(){
     };
 }
 btn_reset.onclick = reset;
-
 
 window.onload = createGrid();
